@@ -329,6 +329,9 @@ $aExemploArray = [
 | 30.1 | quantidadeDiasProtesto | N | Observe as instruções sobre o campo quantidadeDiasProtesto na Geração de Boletos. |
 | 31 | indicadorSustacaoProtesto | S | 	Indica a intenção (ou não) de sustar/cancelar um comando de protesto que já tenha sido processado pelo BB. |
 
+
+
+&nbsp;
 #### > Buscar boleto de cobrança: Retorna um JSON contendo os dados de um boleto de cobrança específico.
 - Função: **buscar()**
 - Recebe um array com as informações para buscar o boleto de cobrança
@@ -348,6 +351,9 @@ $aExemploArray = [
 | 1 |  numeroBoleto | S | Informar o número do boleto de cobrança. |
 | 2 | numeroConvenio | S | Informar o número do convênio de cobrança, com 7 dígitos. |
 
+
+
+&nbsp;
 #### > Baixa/Cancelamento de um boleto de cobrança: Executa a baixa (cancelamento) de um boleto já registrado e ainda em ser (não pode estar liquidado, protestado ou já baixado).
 - Função: **baixar()**
 - **ATENÇÃO**
@@ -368,8 +374,11 @@ $aExemploArray = [
 |:----------:|:-------------:|:------:|:------|
 | 1 |  numeroBoleto | S | Informar o número do boleto de cobrança. |
 | 2 | numeroConvenio | S | Informar o número do convênio de cobrança, com 7 dígitos. |
+
+
+
 &nbsp;
-#### Listar boletos de cobrança: Retorna um JSON contendo os boletos de cobrança.
+#### > Listar boletos de cobrança: Retorna um JSON contendo os boletos de cobrança.
 - Função: **listar()**
 - **ATENÇÃO**
     - **Os parâmetros montam a URL que fará a chamada via GET; se for fornecido algum parâmetro inexistente, ou a combinação dos parâmetros não encontra resultado (lista vazia), o retorno será 404 - not found**
@@ -426,8 +435,11 @@ $aExemploArray = [
 | 17 | codigoEstadoTituloCobranca | N | Código da situação atual do boleto. Domínios: 1 - NORMAL, 2 - MOVIMENTO CARTORIO, 3 - EM CARTORIO, 4 - TITULO COM OCORRENCIA DE CARTORIO, 5 - PROTESTADO ELETRONICO, 6 - LIQUIDADO, 7 - BAIXADO, 8 - TITULO COM PENDENCIA DE CARTORIO, 9 - TITULO PROTESTADO MANUAL, 10 - TITULO BAIXADO/PAGO EM CARTORIO, 11 - TITULO LIQUIDADO/PROTESTADO, 12 - TITULO LIQUID/PGCRTO, 13 - TITULO PROTESTADO AGUARDANDO BAIXA, 14 - TITULO EM LIQUIDACAO, 15 - TITULO AGENDADO BB, 16 - TITULO CREDITADO, 17 - PAGO EM CHEQUE - AGUARD.LIQUIDACAO, 18 - PAGO PARCIALMENTE, 19 - PAGO PARCIALMENTE CREDITADO, 21 - TITULO AGENDADO OUTROS BANCOS. |
 | 18 | boletoVencido | N | 	Define se a pesquisa trará apenas boletos vencidos ou não. Sempre MAIÚSCULA. |
 | 19 | indice | N | Representa o índice da listagem pelo qual sua pesquisa se iniciará, podendo retornar até 300 registros por chamada. O default é 0, o que trará os resultados de 0 a 299 (se houver). Quando o resultado da pesquisa tiver mais que 300 registros, na resposta, o campo indicadorContinuidade retornará com “S”. Recomendamos utilizar o valor do campo proximoIndice (informado na resposta), no campo indice da próxima chamada, para retornar com os próximos registros. |
+
+
+
 &nbsp;
-#### Consultar Pix de um boleto de cobrança: Retorna um JSON contendo os dados de um Pix vinculado a um boleto de cobrança.
+#### > Consultar Pix de um boleto de cobrança: Retorna um JSON contendo os dados de um Pix vinculado a um boleto de cobrança.
 - Função: **consultarPixBoleto()**
 - Recebe um array com as informações do boleto de cobrança
 - Realiza a validação dos dados
@@ -445,8 +457,11 @@ $aExemploArray = [
 |:----------:|:-------------:|:------:|:------|
 | 1 |  numeroBoleto | S | Informar o número do boleto de cobrança. |
 | 2 | numeroConvenio | S | Informar o número do convênio de cobrança, com 7 dígitos. |
+
+
+
 &nbsp;
-#### Gerar Pix para um boleto de cobrança: Retorna um JSON contendo os dados de do Pix gerado.
+#### > Gerar Pix para um boleto de cobrança: Retorna um JSON contendo os dados de do Pix gerado.
 - Função: **gerarPixBoleto()**
 - **ATENÇÃO**
     - **Só é possível gerar Pix para um boleto de cobrança para boleto que não possui Pix vinculado** 
@@ -466,8 +481,11 @@ $aExemploArray = [
 |:----------:|:-------------:|:------:|:------|
 | 1 |  numeroBoleto | S | Informar o número do boleto de cobrança. |
 | 2 | numeroConvenio | S | Informar o número do convênio de cobrança, com 7 dígitos. |
+
+
+
 &nbsp;
-#### Cancelar Pix de um boleto de cobrança: Retorna um JSON contendo os dados de do Pix cancelado.
+#### > Cancelar Pix de um boleto de cobrança: Retorna um JSON contendo os dados de do Pix cancelado.
 - Função: **cancelarPixBoleto()**
 - Recebe um array com as informações do boleto de cobrança
 - Realiza a validação dos dados
@@ -493,9 +511,11 @@ Informações e instruções sobre a integração da API do Pix
 [Documentação Oficial BB](https://apoio.developers.bb.com.br/referency/post/5fe0853e156f4c0012e4e2a9)
 #### Instruções
 - **Valores monetários ou percentuais:** Os valores devem ser representados por decimal e separados por ponto. Ex: 123.45.
-&nbsp;
 
-#### Criar cobrança Pix: Cria uma cobrança imediata via Pix
+
+
+&nbsp;
+#### > Criar cobrança Pix: Cria uma cobrança imediata via Pix
 - Função: **criarCobrancaPix()**
 - Recebe um array com as informações do Pix
 - Realiza a validação dos dados
@@ -540,8 +560,11 @@ Informações e instruções sobre a integração da API do Pix
 | 6 | infoAdicionais | N | Cada respectiva informação adicional contida na lista (nome e valor) deve ser apresentada ao pagador. |
 | 6.1 | nome | N | Nome do campo. |
 | 6.2 | valor | N | Dados do campo. |
+
+
+
 &nbsp;
-#### Revisar cobrança Pix: Revisa uma cobrança imediata via Pix
+#### > Revisar cobrança Pix: Revisa uma cobrança imediata via Pix
 - Função: **revisarCobrancaPix()**
 - Recebe um array com as informações do Pix
 - Realiza a validação dos dados
@@ -579,8 +602,11 @@ Informações e instruções sobre a integração da API do Pix
 | 6.2 | valor | N | Dados do campo. |
 | 7 | status | N | Novo status da cobrança. O único status que pode ser informado na revisão da Cobrança é o REMOVIDA_PELO_USUARIO_RECEBEDOR. |
 | 8 | txid | S | O campo txid determina o identificador da transação. |
+
+
+
 &nbsp;
-#### Consultar cobrança Pix: Consulta uma cobrança através de um determinado txid.
+#### > Consultar cobrança Pix: Consulta uma cobrança através de um determinado txid.
 - Função: **consultarCobrancaPix()**
 - Recebe um array com as informações do Pix
 - Realiza a validação dos dados
@@ -598,8 +624,11 @@ Informações e instruções sobre a integração da API do Pix
 |:----------:|:-------------:|:-------------:|:------|
 | 1 | txid | S | O campo txid determina o identificador da transação. |
 | 2 | revisao | N | Permite recuperar revisões anteriores de uma cobrança. Na ausência desse parâmetro, sempre será retornada a cobrança conforme consta em sua última revisão. |
+
+
+
 &nbsp;
-#### Consultar Pix recebidos: Retorna um JSON contendo os Pix recebidos.
+#### > Consultar Pix recebidos: Retorna um JSON contendo os Pix recebidos.
 - Função: **consultarPixRecebidos()**
 - Recebe um array com as informações de consulta
 - Realiza a validação dos dados
@@ -620,8 +649,11 @@ Informações e instruções sobre a integração da API do Pix
 | 1 | inicio | S | Data inicial da pesquisa. Intervalo máximo: 5 dias. |
 | 2 | fim | S | Data final da pesquisa. Intervalo máximo: 5 dias. |
 | 3 | paginaAtual | N | Definir página consultada. O padrão é 0. |
+
+
+
 &nbsp;
-#### Consultar Pix: Retorna um JSON contendo o Pix consultado.
+#### > Consultar Pix: Retorna um JSON contendo o Pix consultado.
 - Função: **consultarPix()**
 - Recebe um array com as informações de consulta
 - Realiza a validação dos dados
@@ -637,8 +669,11 @@ Informações e instruções sobre a integração da API do Pix
 |    Nº   |    Campo   |    Obrigatório   |  Observações |
 |:----------:|:-------------:|:-------------:|:------|
 | 1 | e2eid | S | 	Id fim a fim da transação que transita na PACS002, PACS004 e PACS008. |
+
+
+
 &nbsp;
-#### Solicitar devolução do Pix: Retorna um JSON contendo os dados da solicitação de devolução.
+#### > Solicitar devolução do Pix: Retorna um JSON contendo os dados da solicitação de devolução.
 - Função: **consultarPix()**
 - Recebe um array com as informações do Pix
 - Realiza a validação dos dados
@@ -656,8 +691,11 @@ Informações e instruções sobre a integração da API do Pix
 |:----------:|:-------------:|:-------------:|:------|
 | 1 | e2eid | S | Id fim a fim da transação que transita na PACS002, PACS004 e PACS008. |
 | 2 | valor | S | Valor solicitado para devolução. A soma dos valores de todas as devolucões não podem ultrapassar o valor total do Pix. |
+
+
+
 &nbsp;
-#### Consultar solicitação de devolução do Pix: Retorna um JSON contendo os dados da solicitação de devolução.
+#### > Consultar solicitação de devolução do Pix: Retorna um JSON contendo os dados da solicitação de devolução.
 - Função: **consultarDevolucaoPix()**
 - Recebe um array com as informações de consulta
 - Realiza a validação dos dados
