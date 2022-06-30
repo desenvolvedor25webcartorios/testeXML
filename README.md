@@ -1,9 +1,6 @@
-## Biblioteca de Integração com a API do Bando do Brasil
-
-***
-
+## Biblioteca de Integração com a API do Banco do Brasil
 #### Serviços integrados
-- [API Cobrança](#api-obrança)
+- [API Cobrança](#api-cobrança)
 - [API PIX](#api-pix)
 
 ***
@@ -23,7 +20,7 @@
 
 ### API Cobrança
 Informações e instruções sobre a integração da API de cobrança
-[Documentação Oficial BB](https://apoio.developers.bb.com.br/referency/post/5f9c2149f39b8500120ab13c)
+- [Documentação Oficial BB](https://apoio.developers.bb.com.br/referency/post/5f9c2149f39b8500120ab13c)
 
 #### Instruções
 - **Valores monetários ou percentuais:** Os valores devem ser representados por decimal e separados por ponto. Ex: 123.45.
@@ -34,7 +31,6 @@ Informações e instruções sobre a integração da API de cobrança
 
     - **textoCampoUtilizacaoBeneficiario:** Deve ser informado uma String com 30 caracteres em maiúsculo.
     - **textoMensagemBloquetoOcorrencia:** Mensagem definida pelo beneficiário para ser impressa no boleto; pode ter no máximo 165 caracteres, sendo que cada 55 caracteres equivalem a uma linha de mensagem.
-
 
 #### > Registrar boleto de cobrança: Cria um boleto bancário, com ou sem PIX
 - Função: **registrar()**
@@ -176,7 +172,9 @@ Informações e instruções sobre a integração da API de cobrança
 | 28 | orgaoNegativador | N | Código do órgão negativador selecionado. Domínio: 10 - SERASA; 11 - QUOD. |
 | 29 | indicadorPix | N | Código para informar se o boleto terá um QRCode Pix atrelado. Se não informado, ou utilizado caractere inválido, o sistema assumirá ‘N’. Atenção: conforme regulamentação do Bacen, é permitido somente para modalidade de cobrança simples (ver codigoModalidade). Domínio: S - QRCode dinâmico; N - sem Pix. |
 &nbsp;
-#### Alterar boleto de cobrança: Altera um dado de um boleto já registrado, em ser (não pode estar baixado, liquidado ou protestado).
+
+&nbsp;
+#### > Alterar boleto de cobrança: Altera um dado de um boleto já registrado, em ser (não pode estar baixado, liquidado ou protestado).
 - Função: **alterar()**
 - **ATENÇÃO**
     - **Só pode ser enviada uma alteração por chamada**
@@ -329,8 +327,8 @@ $aExemploArray = [
 | 30 | protesto | N | Sem observação. |
 | 30.1 | quantidadeDiasProtesto | N | Observe as instruções sobre o campo quantidadeDiasProtesto na Geração de Boletos. |
 | 31 | indicadorSustacaoProtesto | S | 	Indica a intenção (ou não) de sustar/cancelar um comando de protesto que já tenha sido processado pelo BB. |
-&nbsp;
-#### Buscar boleto de cobrança: Retorna um JSON contendo os dados de um boleto de cobrança específico.
+
+#### > Buscar boleto de cobrança: Retorna um JSON contendo os dados de um boleto de cobrança específico.
 - Função: **buscar()**
 - Recebe um array com as informações para buscar o boleto de cobrança
 - Realiza a validação dos dados
@@ -348,8 +346,8 @@ $aExemploArray = [
 |:----------:|:-------------:|:------:|:------|
 | 1 |  numeroBoleto | S | Informar o número do boleto de cobrança. |
 | 2 | numeroConvenio | S | Informar o número do convênio de cobrança, com 7 dígitos. |
-&nbsp;
-#### Baixa/Cancelamento de um boleto de cobrança: Executa a baixa (cancelamento) de um boleto já registrado e ainda em ser (não pode estar liquidado, protestado ou já baixado).
+
+#### > Baixa/Cancelamento de um boleto de cobrança: Executa a baixa (cancelamento) de um boleto já registrado e ainda em ser (não pode estar liquidado, protestado ou já baixado).
 - Função: **baixar()**
 - **ATENÇÃO**
     - **Um pedido de baixa só será aceito a partir de 30 minutos da geração do mesmo boleto. Se solicitado antes desse prazo, o sistema retornará erro.**
