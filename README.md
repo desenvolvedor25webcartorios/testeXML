@@ -32,6 +32,8 @@ Informações e instruções sobre a integração da API de cobrança
     - **textoCampoUtilizacaoBeneficiario:** Deve ser informado uma String com 30 caracteres em maiúsculo.
     - **textoMensagemBloquetoOcorrencia:** Mensagem definida pelo beneficiário para ser impressa no boleto; pode ter no máximo 165 caracteres, sendo que cada 55 caracteres equivalem a uma linha de mensagem.
 
+
+&nbsp;
 #### > Registrar boleto de cobrança: Cria um boleto bancário, com ou sem PIX
 - Função: **registrar()**
 - Recebe um array com as informações do boleto de cobrança
@@ -508,7 +510,7 @@ $aExemploArray = [
 
 ### API Pix
 Informações e instruções sobre a integração da API do Pix
-[Documentação Oficial BB](https://apoio.developers.bb.com.br/referency/post/5fe0853e156f4c0012e4e2a9)
+- [Documentação Oficial BB](https://apoio.developers.bb.com.br/referency/post/5fe0853e156f4c0012e4e2a9)
 #### Instruções
 - **Valores monetários ou percentuais:** Os valores devem ser representados por decimal e separados por ponto. Ex: 123.45.
 
