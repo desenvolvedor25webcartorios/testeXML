@@ -171,7 +171,8 @@ Informações e instruções sobre a integração da API de cobrança
 | 27 | quantidadeDiasNegativacao | N | Quantidade de dias corridos depois do vencimento do boleto para a negativação automática, através do órgão negativador selecionado. Não confundir com protesto. |
 | 28 | orgaoNegativador | N | Código do órgão negativador selecionado. Domínio: 10 - SERASA; 11 - QUOD. |
 | 29 | indicadorPix | N | Código para informar se o boleto terá um QRCode Pix atrelado. Se não informado, ou utilizado caractere inválido, o sistema assumirá ‘N’. Atenção: conforme regulamentação do Bacen, é permitido somente para modalidade de cobrança simples (ver codigoModalidade). Domínio: S - QRCode dinâmico; N - sem Pix. |
-&nbsp;
+
+
 
 &nbsp;
 #### > Alterar boleto de cobrança: Altera um dado de um boleto já registrado, em ser (não pode estar baixado, liquidado ou protestado).
