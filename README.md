@@ -35,7 +35,8 @@ Informações e instruções sobre a integração da API de cobrança
     - **textoCampoUtilizacaoBeneficiario:** Deve ser informado uma String com 30 caracteres em maiúsculo.
     - **textoMensagemBloquetoOcorrencia:** Mensagem definida pelo beneficiário para ser impressa no boleto; pode ter no máximo 165 caracteres, sendo que cada 55 caracteres equivalem a uma linha de mensagem.
 &nbsp;
-#### Registrar boleto de cobrança: Cria um boleto bancário, com ou sem PIX
+&nbsp;
+#### -> Registrar boleto de cobrança: Cria um boleto bancário, com ou sem PIX
 - Função: **registrar()**
 - Recebe um array com as informações do boleto de cobrança
 - Realiza a validação dos dados
